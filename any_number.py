@@ -6,9 +6,9 @@
 
 
 def main():
-    # this program shows the sum of all numbers from 0 to number
-    counter = 0
-    sum = 0
+    # this program shows the sum of number entered
+    counter = 1
+    sum = 1
 
     # input
     number = input("Enter number (integer): ")
@@ -16,15 +16,13 @@ def main():
     # process & output
     try:
         number_int = int(number)
-        if number_int < 0:
-            print("Not a positive number")
-        elif number_int == 0:
-            print("1")
+        if number_int > 0:
+            while counter <= number_int:
+                sum = sum * counter
+                counter = counter + 1
+            print("{0}! = {1}".format(number_int, sum))
         else:
-            for counter in range(number_int + 1):
-                sum = counter * counter
-            print("{0}² = {1}".format(number_int, sum))
-
+            print("Not a positive number")
     except Exception:
         print("Not a number.")
     print("\nDone.")
